@@ -41,6 +41,9 @@ namespace TheGardenRoom
         }
 
         services.AddRazorPages();
+        services.AddDbContext<RazorPagesFlowerContext>(options =>
+        options.UseSqlite(Configuration.GetConnectionString("RazorPagesFlowerContext")));
+
     }
 
     public void Configure(IApplicationBuilder app)
